@@ -54,8 +54,10 @@ public class Cuenta {
     new Movimiento(LocalDate.now(), cuanto, false).agregateA(this);
   }
 
-  public void agregarMovimiento(LocalDate fecha, double cuanto, boolean esDeposito) {
-    Movimiento movimiento = new Movimiento(fecha, cuanto, esDeposito);
+  // ANTES -> public void agregarMovimiento(LocalDate fecha, double cuanto, boolean esDeposito) {
+    public void agregarMovimiento(Movimiento movimiento) { // CodeSmell->Long parameter List
+                                                                                      // Nos falta la abstraccion de Movimiento
+    //Movimiento movimiento = new Movimiento(fecha, cuanto, esDeposito);
     movimientos.add(movimiento);
   }
 
